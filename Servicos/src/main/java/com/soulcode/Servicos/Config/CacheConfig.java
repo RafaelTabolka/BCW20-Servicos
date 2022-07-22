@@ -34,6 +34,10 @@ public class CacheConfig {
                         RedisCacheConfiguration.defaultCacheConfig()
                                 .entryTtl(Duration.ofSeconds(10))
                                 .serializeValuesWith(serializationPair)
+                ).withCacheConfiguration("funcionariosCache",
+                        RedisCacheConfiguration.defaultCacheConfig()
+                                .entryTtl(Duration.ofSeconds(30))
+                                .serializeValuesWith(serializationPair)
                 );
     }
 }
