@@ -22,4 +22,9 @@ public interface ChamadoRepository extends JpaRepository<Chamado,Integer> {
     @Query(value="SELECT * FROM chamado WHERE data_entrada BETWEEN :data1 AND :data2", nativeQuery = true)
     List<Chamado> findByIntervaloData(Date data1, Date data2);
 
+    @Query(value ="SELECT * FROM chamado AS c RIGHT JOIN pagamento AS p on c.id_pagamento = p.id_pagamento where p.status = 'QUITADO';", nativeQuery = true)
+    List<Chamado> findByStatusPagamentoQuitado();
+
+
+
 }
