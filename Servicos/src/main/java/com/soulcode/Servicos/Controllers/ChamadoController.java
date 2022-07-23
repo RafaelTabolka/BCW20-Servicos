@@ -58,6 +58,12 @@ public class ChamadoController {
         return chamados;
     }
 
+    @GetMapping("/chamadosPeloStatusPagamentoQuitado")
+    public List<Chamado> listaChamadoPagamentoQuitado(){
+        List<Chamado> chamados = chamadoService.listaChamadoPagamentoQuitado();
+        return chamados;
+    }
+
     @PostMapping("/chamados/{idCliente}")
     public ResponseEntity<Chamado> cadastrarChamado(@PathVariable Integer idCliente,
                                                     @RequestBody Chamado chamado){

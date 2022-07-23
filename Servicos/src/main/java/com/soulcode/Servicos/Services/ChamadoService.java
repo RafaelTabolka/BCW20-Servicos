@@ -52,7 +52,6 @@ public class ChamadoService {
         return chamadoRepository.findByFuncionario(funcionario);
     }
 
-
     @Cacheable(value = "chamadosCache", key = "#status")
     public List<Chamado> buscarChamadosPeloStatus(String status){
         return chamadoRepository.findByStatus(status);
@@ -61,6 +60,11 @@ public class ChamadoService {
     @Cacheable(value = "chamadosCache", key = "T(java.util.Objects).hash(#data1, #data2)")
     public List<Chamado> buscarPorIntervaloData(Date data1, Date data2){
         return chamadoRepository.findByIntervaloData(data1,data2);
+    }
+
+    @Cacheable("chamadosCache")
+    public List<Chamado> listaChamadoPagamentoQuitado() {
+        return chamadoRepository.findByStatusPagamentoQuitado();
     }
 
     @CachePut(value = "chamadosCache", key = "#idCliente")
