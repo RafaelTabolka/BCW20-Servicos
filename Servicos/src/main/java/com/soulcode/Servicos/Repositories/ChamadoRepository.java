@@ -25,6 +25,7 @@ public interface ChamadoRepository extends JpaRepository<Chamado,Integer> {
     @Query(value ="SELECT * FROM chamado AS c RIGHT JOIN pagamento AS p on c.id_pagamento = p.id_pagamento where p.status = 'QUITADO';", nativeQuery = true)
     List<Chamado> findByStatusPagamentoQuitado();
 
-
+    @Query(value ="SELECT * FROM chamado AS c RIGHT JOIN pagamento AS p on c.id_pagamento = p.id_pagamento where p.status = 'LANCADO';", nativeQuery = true)
+    List<Chamado> findByStatusPagamentoLancado();
 
 }
