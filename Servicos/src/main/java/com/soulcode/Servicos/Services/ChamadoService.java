@@ -67,6 +67,11 @@ public class ChamadoService {
         return chamadoRepository.findByStatusPagamentoQuitado();
     }
 
+    @Cacheable("chamadosCache")
+    public List<Chamado> listaChamadoPagamentoLancado() {
+        return chamadoRepository.findByStatusPagamentoLancado();
+    }
+
     @CachePut(value = "chamadosCache", key = "#idCliente")
     public Chamado cadastrarChamado(Chamado chamado, Integer idCliente){
         chamado.setStatus(StatusChamado.RECEBIDO);
