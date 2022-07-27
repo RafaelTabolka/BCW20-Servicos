@@ -1,6 +1,7 @@
 package com.soulcode.Servicos.Controllers;
 
 import com.soulcode.Servicos.Models.Pagamento;
+import com.soulcode.Servicos.Models.PagamentoTemporario;
 import com.soulcode.Servicos.Services.PagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -44,7 +45,9 @@ public class PagamentoController {
 
     @PostMapping("/pagamentos/{idChamado}")
     public ResponseEntity<Pagamento> cadastrarPagamento(@PathVariable Integer idChamado,
-                                                        @RequestBody Pagamento pagamento){
+                                                        @RequestBody PagamentoTemporario pagamentoTemporario){
+        Pagamento pagamento = new Pagamento();
+        pagamento = pagamento.preencherPagamento(pagamentoTemporario);
         pagamento = pagamentoService.cadastrarPagamento(pagamento,idChamado);
         URI novaUri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(pagamento.getIdPagamento()).toUri();
@@ -53,7 +56,9 @@ public class PagamentoController {
 
     @PutMapping("/pagamentos/{idPagamento}")
     public ResponseEntity<Pagamento> editarPagamento(@PathVariable Integer idPagamento,
-                                                     @RequestBody Pagamento pagamento){
+                                                     @RequestBody PagamentoTemporario pagamentoTemporario){
+        Pagamento pagamento = new Pagamento();
+        pagamento = pagamento.preencherPagamento(pagamentoTemporario);
         pagamento.setIdPagamento(idPagamento);
         pagamentoService.editarPagamento(pagamento);
         return ResponseEntity.ok().body(pagamento);
@@ -65,6 +70,4 @@ public class PagamentoController {
         pagamentoService.modificarStatusPagamento(idPagamento,status);
         return ResponseEntity.noContent().build();
     }
-
-
 }
