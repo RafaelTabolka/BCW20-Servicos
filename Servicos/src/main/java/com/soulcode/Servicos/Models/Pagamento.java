@@ -20,6 +20,14 @@ public class Pagamento {
     @Enumerated(EnumType.STRING)
     private StatusPagamento status;
 
+    public Pagamento preencherPagamento(PagamentoTemporario pagamentoTemporario){
+        Pagamento pagamento = new Pagamento();
+        pagamento.setValor(pagamentoTemporario.getValor());
+        pagamento.setFormPagamento(pagamentoTemporario.getFormPagamento());
+        pagamento.setStatus(StatusPagamento.valueOf(pagamentoTemporario.getStatus()));
+        return pagamento;
+    }
+
     public Integer getIdPagamento() {
         return idPagamento;
     }
