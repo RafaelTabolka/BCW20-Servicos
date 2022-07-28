@@ -71,4 +71,8 @@ public class PagamentoService {
 
         return pagamentoRepository.orcamentoComServicoCliente();
     }
+
+    public List<Object> mostrarQuantidadePagamentoPorStatus() {
+        return pagamentoRepository.findByPagamentoPorStatus();
+    }
 }

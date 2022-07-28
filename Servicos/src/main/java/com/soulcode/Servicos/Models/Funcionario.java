@@ -27,7 +27,7 @@ public class Funcionario {
     @OneToMany(mappedBy = "funcionario")
     private List<Chamado> chamados = new ArrayList<Chamado>();
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCargo")
     private Cargo cargo;
 
