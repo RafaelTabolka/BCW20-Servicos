@@ -37,6 +37,12 @@ public class PagamentoController {
         return pagamentos;
     }
 
+    @GetMapping("/pagamentosPorQuantidadeStatus")
+    public List<Object> mostrarQuantidadePagamentoPorStatus(){
+        List<Object> pagamentos = pagamentoService.mostrarQuantidadePagamentoPorStatus();
+        return pagamentos;
+    }
+
     @GetMapping("/pagamentosChamadosComCliente")
     public List<List> orcamentoComServicoCliente(){
         List<List> pagamentos = pagamentoService.orcamentoComServicoCliente();
