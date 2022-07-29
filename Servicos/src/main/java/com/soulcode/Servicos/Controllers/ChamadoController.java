@@ -1,6 +1,7 @@
 package com.soulcode.Servicos.Controllers;
 
 import com.soulcode.Servicos.Models.Chamado;
+import com.soulcode.Servicos.Models.ChamadoTemporario;
 import com.soulcode.Servicos.Services.ChamadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -58,6 +59,12 @@ public class ChamadoController {
         return chamados;
     }
 
+    @GetMapping("/chamadosPorQuantidadeStatus")
+    public List<Object> mostrarQuantidadeChamadoPorStatus() {
+        List<Object> chamados = chamadoService.mostrarQuantidadeChamadoPorStatus();
+        return chamados;
+    }
+
     @GetMapping("/chamadosPeloStatusPagamentoQuitado")
     public List<Chamado> listaChamadoPagamentoQuitado(){
         List<Chamado> chamados = chamadoService.listaChamadoPagamentoQuitado();
@@ -87,7 +94,9 @@ public class ChamadoController {
 
     @PutMapping("/chamados/{idChamado}")
     public ResponseEntity<Chamado> editarChamado(@PathVariable Integer idChamado,
-                                                 @RequestBody Chamado chamado){
+                                                 @RequestBody ChamadoTemporario chamadoTemporario){
+        Chamado chamado = new Chamado();
+        chamado = chamado.preencherChamado(chamadoTemporario);
         chamado.setIdChamado(idChamado);
         chamadoService.editarChamado(chamado, idChamado);
         return ResponseEntity.ok().build();

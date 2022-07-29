@@ -61,6 +61,8 @@ public class FuncionarioService {
 
     @CacheEvict(value = "funcionariosCache", key = "idFuncionario", allEntries = true)
     public void excluirFuncionario(Integer idFuncionario){
+        Optional<Funcionario> funcionario = funcionarioRepository.findById(idFuncionario);
+        funcionario.get().setCargo(null);
         funcionarioRepository.deleteById(idFuncionario);
     }
 
