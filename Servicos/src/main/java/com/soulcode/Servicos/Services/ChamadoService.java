@@ -72,6 +72,10 @@ public class ChamadoService {
         return chamadoRepository.findByStatusPagamentoLancado();
     }
 
+    public List<Object> mostrarQuantidadeChamadoPorStatus() {
+        return chamadoRepository.findByChamadoPorStatus();
+    }
+
     @CachePut(value = "chamadosCache", key = "#idCliente")
     public Chamado cadastrarChamado(Chamado chamado, Integer idCliente){
         chamado.setStatus(StatusChamado.RECEBIDO);

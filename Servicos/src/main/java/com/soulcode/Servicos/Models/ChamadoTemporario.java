@@ -1,51 +1,17 @@
 package com.soulcode.Servicos.Models;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-public class Chamado {
+public class ChamadoTemporario {
 
-    @Id
     private Integer idChamado;
-
-    @Column(nullable = false)
     private String titulo;
-
-    @Column(nullable = true)
     private String descricao;
-
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    @Column(columnDefinition = "date", nullable = false)
     private Date dataEntrada;
-
-    @Enumerated(EnumType.STRING)
-    private StatusChamado status;
-
-    @ManyToOne
-    @JoinColumn(name = "idFuncionario")
+    private String status;
     private Funcionario funcionario;
-
-    @ManyToOne
-    @JoinColumn(name = "idCliente")
     private Cliente cliente;
-
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "idPagamento", unique=true)
-    private  Pagamento pagamento;
-
-    public Chamado preencherChamado(ChamadoTemporario chamadoTemporario){
-        Chamado chamado = new Chamado();
-        chamado.setTitulo(chamadoTemporario.getTitulo());
-        chamado.setDescricao(chamadoTemporario.getDescricao());
-        chamado.setDataEntrada(chamadoTemporario.getDataEntrada());
-        chamado.setStatus(StatusChamado.valueOf(chamadoTemporario.getStatus()));
-        chamado.setFuncionario(chamadoTemporario.getFuncionario());
-        chamado.setCliente(chamadoTemporario.getCliente());
-        return chamado;
-    }
+    private Pagamento pagamento;
 
     public Integer getIdChamado() {
         return idChamado;
@@ -79,11 +45,11 @@ public class Chamado {
         this.dataEntrada = dataEntrada;
     }
 
-    public StatusChamado getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusChamado status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
