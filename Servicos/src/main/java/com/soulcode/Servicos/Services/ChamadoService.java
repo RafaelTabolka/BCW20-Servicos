@@ -82,6 +82,7 @@ public class ChamadoService {
         chamado.setFuncionario(null);
         Optional<Cliente> cliente = clienteRepository.findById(idCliente);
         chamado.setCliente(cliente.get());
+        chamado.setDataEntrada(new Date());
         return chamadoRepository.save(chamado);
     }
 
@@ -96,6 +97,7 @@ public class ChamadoService {
         Funcionario funcionario = chamadoSemAsNovasAlteracoes.getFuncionario();
         Cliente cliente = chamadoSemAsNovasAlteracoes.getCliente();
 
+        chamado.setDataEntrada(chamadoSemAsNovasAlteracoes.getDataEntrada());
         chamado.setCliente(cliente);
         chamado.setFuncionario(funcionario);
         return chamadoRepository.save(chamado);
