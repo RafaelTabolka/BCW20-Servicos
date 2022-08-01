@@ -1,5 +1,6 @@
 package com.soulcode.Servicos.Controllers;
 
+import com.soulcode.Servicos.Models.Cargo;
 import com.soulcode.Servicos.Models.Funcionario;
 import com.soulcode.Servicos.Services.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
