@@ -1,9 +1,6 @@
 package com.soulcode.Servicos.Services;
 
-import com.soulcode.Servicos.Models.Chamado;
-import com.soulcode.Servicos.Models.Cliente;
-import com.soulcode.Servicos.Models.Funcionario;
-import com.soulcode.Servicos.Models.StatusChamado;
+import com.soulcode.Servicos.Models.*;
 import com.soulcode.Servicos.Repositories.ChamadoRepository;
 import com.soulcode.Servicos.Repositories.ClienteRepository;
 import com.soulcode.Servicos.Repositories.FuncionarioRepository;
@@ -80,9 +77,9 @@ public class ChamadoService {
     public Chamado cadastrarChamado(Chamado chamado, Integer idCliente){
         chamado.setStatus(StatusChamado.RECEBIDO);
         chamado.setFuncionario(null);
+        chamado.setDataEntrada(new Date());
         Optional<Cliente> cliente = clienteRepository.findById(idCliente);
         chamado.setCliente(cliente.get());
-        chamado.setDataEntrada(new Date());
         return chamadoRepository.save(chamado);
     }
 
@@ -96,7 +93,8 @@ public class ChamadoService {
         Chamado chamadoSemAsNovasAlteracoes = mostrarUmChamado(idChamado);
         Funcionario funcionario = chamadoSemAsNovasAlteracoes.getFuncionario();
         Cliente cliente = chamadoSemAsNovasAlteracoes.getCliente();
-
+        Pagamento pagamento = chamadoSemAsNovasAlteracoes.getPagamento();
+        chamado.setPagamento(pagamento);
         chamado.setDataEntrada(chamadoSemAsNovasAlteracoes.getDataEntrada());
         chamado.setCliente(cliente);
         chamado.setFuncionario(funcionario);

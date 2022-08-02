@@ -38,12 +38,21 @@ public class Chamado {
 
     public Chamado preencherChamado(ChamadoTemporario chamadoTemporario){
         Chamado chamado = new Chamado();
+        chamado.setIdChamado(chamadoTemporario.getIdChamado());
         chamado.setTitulo(chamadoTemporario.getTitulo());
-        chamado.setDescricao(chamadoTemporario.getDescricao());
-        chamado.setDataEntrada(chamadoTemporario.getDataEntrada());
-        chamado.setStatus(StatusChamado.valueOf(chamadoTemporario.getStatus()));
-        chamado.setFuncionario(chamadoTemporario.getFuncionario());
+        if(chamadoTemporario.getDescricao() != null){
+            chamado.setDescricao(chamadoTemporario.getDescricao());
+        }
+        if(chamadoTemporario.getDataEntrada() != null){
+            chamado.setDataEntrada(chamadoTemporario.getDataEntrada());
+        }
+        if(chamadoTemporario.getStatus() != null) {
+            chamado.setStatus(StatusChamado.valueOf(chamadoTemporario.getStatus()));
+        }
         chamado.setCliente(chamadoTemporario.getCliente());
+        if(chamadoTemporario.getStatus() != null) {
+            chamado.setPagamento(chamadoTemporario.getPagamento());
+        }
         return chamado;
     }
 
