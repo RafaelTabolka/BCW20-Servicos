@@ -3,6 +3,7 @@ package com.soulcode.Servicos.Controllers;
 import com.soulcode.Servicos.Models.Chamado;
 import com.soulcode.Servicos.Models.ChamadoTemporario;
 import com.soulcode.Servicos.Services.ChamadoService;
+import com.soulcode.Servicos.Services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,8 @@ public class ChamadoController {
 
     @Autowired
     ChamadoService chamadoService;
+    @Autowired
+    ClienteService clienteService;
 
     @GetMapping("/chamados")
     public List<Chamado> mostrarTodosChamados(){
@@ -79,7 +82,10 @@ public class ChamadoController {
 
     @PostMapping("/chamados/{idCliente}")
     public ResponseEntity<Chamado> cadastrarChamado(@PathVariable Integer idCliente,
-                                                    @RequestBody Chamado chamado){
+                                                    @RequestBody ChamadoTemporario chamadoTemporario){
+        Chamado chamado = new Chamado();
+        chamado = chamado.preencherChamado(chamadoTemporario);
+        chamado.setCliente(clienteService.mostrarUmCliente(idCliente));
         chamado = chamadoService.cadastrarChamado(chamado,idCliente);
         URI novaUri = ServletUriComponentsBuilder.fromCurrentRequest().path("{/id}")
                 .buildAndExpand(chamado.getIdChamado()).toUri();

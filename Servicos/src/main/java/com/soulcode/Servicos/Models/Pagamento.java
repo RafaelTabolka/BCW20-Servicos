@@ -24,7 +24,9 @@ public class Pagamento {
         Pagamento pagamento = new Pagamento();
         pagamento.setValor(pagamentoTemporario.getValor());
         pagamento.setFormPagamento(pagamentoTemporario.getFormPagamento());
-        pagamento.setStatus(StatusPagamento.valueOf(pagamentoTemporario.getStatus()));
+        if(pagamentoTemporario.getStatus() != null) {
+            pagamento.setStatus(StatusPagamento.valueOf(pagamentoTemporario.getStatus()));
+        }
         return pagamento;
     }
 
