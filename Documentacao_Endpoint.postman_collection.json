@@ -1,0 +1,1317 @@
+{
+	"info": {
+		"_postman_id": "2de29721-276a-4b25-95a3-6f3373c1c6d4",
+		"name": "BCW20-Servicos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20744177"
+	},
+	"item": [
+		{
+			"name": "Cargos",
+			"item": [
+				{
+					"name": "/cargos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/cargos",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cargos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cargos/{idCargo}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/cargos/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cargos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cargos/{idCargo}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeCargo\": \"Desenvolvedor Full Stack Junior\",\r\n    \"descricao\": \"desenvolve programas muito loucos\",\r\n    \"salario\": 4500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/cargos/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cargos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cargos/{idCargo}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/cargos/7",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cargos",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cargos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Diretor\",\r\n    \"descricao\": \"Comandar tudo\",\r\n    \"salario\": 7500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/cargos",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cargos"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Este é o endpoint de cargos da aplicação"
+		},
+		{
+			"name": "Funcionarios",
+			"item": [
+				{
+					"name": "/funcionarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTc5MDc0Njl9.G-YnbAZbzsrjEC4WcEYWrDB0HRox9a74j4IUpn2KrCqVrg64HKvGVGEWycZNaiyJiRRJkFXfFX-k5RWtpeGwyg",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"nome\": \"Josefino Antonio\",\r\n        \"email\": \"jose.antonio@gmail.com\",\r\n        \"cargo\": {\r\n            \"idCargo\": 3\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/funcionarios",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/funcionarios/{idFuncionario}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/funcionarios/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/funcionariosEmail/{email}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/funcionariosEmail/jose.antonio@gmail.com",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"funcionariosEmail",
+								"jose.antonio@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/funcionariosDoCargo/{idCargo}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/funcionariosDoCargo/5",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"funcionariosDoCargo",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/funcionarios/{idCargo}",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTc5MDc0Njl9.G-YnbAZbzsrjEC4WcEYWrDB0HRox9a74j4IUpn2KrCqVrg64HKvGVGEWycZNaiyJiRRJkFXfFX-k5RWtpeGwyg",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Natalia Viana\",\r\n        \"email\": \"nati.viana@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/funcionarios/3",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"funcionarios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/funcionarios/{idFuncionario}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/funcionarios/11",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"funcionarios",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/funcionarios/{idFuncionario}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"nome\": \"Josefino Antonio Augusto\",\r\n        \"email\": \"jose.antonio@gmail.com\",\r\n        \"cargo\": {\r\n            \"idCargo\": 3\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/funcionarios/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "/clientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTg0MDY1MzR9.IDTAg-X2YolgWNAiWv3dBH4O9hVWORCo6janhRw4ezaeHiAwuyPcXGURhKQCpGVKFsg7M-R7zk47goJzyEg1oA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nome\": \"Filadelfia Santos\",\r\n        \"email\": \"fila.@hotmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/clientes",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientes/{idCliente}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/clientes/4",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientesEmail/{email}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/clientesEmail/josef.a@hotmail.com",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientesEmail",
+								"josef.a@hotmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nome\": \"Gustavo Minghini\",\r\n        \"email\": \"gugu.mimi@hotmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/clientes",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientes/{idCliente}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTc5MDc0Njl9.G-YnbAZbzsrjEC4WcEYWrDB0HRox9a74j4IUpn2KrCqVrg64HKvGVGEWycZNaiyJiRRJkFXfFX-k5RWtpeGwyg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/clientes/6",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientes/{idCliente}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nome\": \"Maria Joaquina Santos\",\r\n        \"email\": \"maria.jojo.santos@hotmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/clientes/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EnderecoCliente",
+			"item": [
+				{
+					"name": "/enderecoCliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nome\": \"Filadelfia Santos\",\r\n        \"email\": \"fila.@hotmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/enderecoCliente",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"enderecoCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/enderecoCliente/{idEnderecoCli}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/enderecoCliente/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"enderecoCliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/enderecoCliente/{idCliente}",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEndereco\": 9,\r\n    \"rua\": \"Avenida Sergio Pires, 169\",\r\n    \"bairro\": \"Luiz Ometto\",\r\n    \"cidade\": \"Américo Brasiliense\",\r\n    \"uf\": \"SP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/enderecoCliente/8",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"enderecoCliente",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/enderecoCliente/{idEndereco}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTgyNjA1NTB9.wrboBBqwYbYw6OcX6CPSLAdXumKdUn5zcFpJCI35L2AA8ust6zhe2G2I6Vz-_v6auld7GuTTk7vwGK3j1DiGNQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEndereco\": 9,\r\n    \"rua\": \"Avenida Sergio Pires, 169\",\r\n    \"bairro\": \"Luiz Ometto\",\r\n    \"cidade\": \"Américo Brasiliense\",\r\n    \"uf\": \"SP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/enderecoCliente/8",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"enderecoCliente",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pagamentos",
+			"item": [
+				{
+					"name": "/pagamentos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTg0MDY1MzR9.IDTAg-X2YolgWNAiWv3dBH4O9hVWORCo6janhRw4ezaeHiAwuyPcXGURhKQCpGVKFsg7M-R7zk47goJzyEg1oA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/pagamentos",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pagamentos/{idPagamento}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTg0MDY1MzR9.IDTAg-X2YolgWNAiWv3dBH4O9hVWORCo6janhRw4ezaeHiAwuyPcXGURhKQCpGVKFsg7M-R7zk47goJzyEg1oA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/pagamentos/123",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pagamentosPeloStatus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTg0MDY1MzR9.IDTAg-X2YolgWNAiWv3dBH4O9hVWORCo6janhRw4ezaeHiAwuyPcXGURhKQCpGVKFsg7M-R7zk47goJzyEg1oA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/pagamentosPeloStatus?status=QUITADO",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentosPeloStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "QUITADO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pagamentosChamadosComCliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTg0MDY1MzR9.IDTAg-X2YolgWNAiWv3dBH4O9hVWORCo6janhRw4ezaeHiAwuyPcXGURhKQCpGVKFsg7M-R7zk47goJzyEg1oA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}/pagamentosChamadosComCliente",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentosChamadosComCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pagamentosPorQuantidadeStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/pagamentosPorQuantidadeStatus",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentosPorQuantidadeStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "LANCADO",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pagamentos/{idChamados}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 20.0,\r\n    \"formaPagamento\": \"dinheiro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/pagamentos/131",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentos",
+								"131"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pagamentos/{idPagamento}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 20.0,\r\n    \"formaPagamento\": \"crédito\",\r\n    \"statusPagamento\": \"LANCADO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/pagamentos/127",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentos",
+								"127"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pagamentoModificarStatus/{idPagamento}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/pagamentoModificarStatus/126?status=QUITADO",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pagamentoModificarStatus",
+								"126"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "QUITADO"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chamados",
+			"item": [
+				{
+					"name": "/chamados",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTg0MDY1MzR9.IDTAg-X2YolgWNAiWv3dBH4O9hVWORCo6janhRw4ezaeHiAwuyPcXGURhKQCpGVKFsg7M-R7zk47goJzyEg1oA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{local}}/chamados",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamados/{idChamado}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamados/122",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamados",
+								"122"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamados/{idCliente}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosPeloCliente/8",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosPeloCliente",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamados/{idFuncionario}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosPeloFuncionario/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosPeloFuncionario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamadosPeloStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosPeloStatus?status=RECEBIDO",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosPeloStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "RECEBIDO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamadosPorIntervaloData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosPorIntervaloData?data1=2022-05-10&data2=2022-05-30",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosPorIntervaloData"
+							],
+							"query": [
+								{
+									"key": "data1",
+									"value": "2022-05-10"
+								},
+								{
+									"key": "data2",
+									"value": "2022-05-30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamadosPeloStatusPagamentoQuitado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosPeloStatusPagamentoQuitado",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosPeloStatusPagamentoQuitado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamadosPeloStatusPagamentoLancado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosPeloStatusPagamentoLancado",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosPeloStatusPagamentoLancado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamadosPorQuantidadeStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosPorQuantidadeStatus",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosPorQuantidadeStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamados/{idCliente}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idChamado\": 138,\r\n    \"titulo\": \"Impressão\",\r\n    \"descricao\": \"Impressão\",\r\n    \"cliente\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/chamados/4",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamados",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamados/{idChamados}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamados/129",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamados",
+								"129"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamados/{idChamados}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Troca peça\",\r\n    \"descricao\": \"Troca memoria RAM DDR4\",\r\n    \"dataEntrada\": \"2022-06-29\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/chamados/122",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamados",
+								"122"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamadosAtribuirFuncionario/{idChamado}/{idFuncionario}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosAtribuirFuncionario/130/9",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosAtribuirFuncionario",
+								"130",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/chamadosModificarStatus/{idChamado}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/chamadosModificarStatus/122?status=CONCLUIDO",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"chamadosModificarStatus",
+								"122"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "CONCLUIDO"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/servicos/usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTc5MDc0Njl9.G-YnbAZbzsrjEC4WcEYWrDB0HRox9a74j4IUpn2KrCqVrg64HKvGVGEWycZNaiyJiRRJkFXfFX-k5RWtpeGwyg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/usuarios",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"login\": \"naati.viana@hotmail.com\",\r\n        \"password\": \"batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/usuarios",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuarios",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"natureza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/usuarios/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"naati.viana@gmail.com\",\r\n    \"password\": \"primavera\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{login}}/login",
+					"host": [
+						"{{login}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWF0aS52aWFuYUBnbWFpbC5jb20iLCJleHAiOjE2NTk0NTY5ODV9.XyE6pmvxlWh5N8RGIwMxl6Zj1lMPsWG6OxkCRrRuZPboL8iEkqP9gAWNotA4dEZcb-CnONae7hjLmBW6a38FiA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:8080/servicos",
+			"type": "string"
+		},
+		{
+			"key": "login",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}
